@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
+export default function App(){
+  const [count, setCount] = useState(0);
 
-
-function App(){
-  const state = useState(0);
- 
-    
-  function inc(){
-    // count++;
+  const inc = () => {
+    setCount( count + 1 );
   }
 
-  return (
+  const dec = () => {
+    setCount( count - 1 );
+  }
+
+  return(
     <div className="container">
-      <h1>{state[0]}</h1>
+      <h1>{ count }</h1>
       <button onClick={inc}>+</button>
+      <button onClick={dec}>-</button>
     </div>
   )
-};
-
-export default App;
+}
